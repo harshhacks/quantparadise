@@ -1,6 +1,7 @@
 # COMS4995
 
 ![GitHub issues](https://img.shields.io/github/issues/harshhacks/COMS4995?logo=Github)
+![GitHub](https://img.shields.io/github/license/harshhacks/COMS4995?style=flat-square)
 
 Open Source Project for COMS 4995
 
