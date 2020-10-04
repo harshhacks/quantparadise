@@ -1,5 +1,5 @@
 # COMS4995
-![lisense](https://img.shields.io/github/license/harshhacks/SQL_Magiclight)
+
 Open Source Project for COMS 4995
 
 
