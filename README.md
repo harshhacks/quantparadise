@@ -4,7 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/harshhacks/COMS4995?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/harshhacks/COMS4995)
 
-##What is it?
+## What is it?
 
 Open Source tool to calibrate spot rates and swap rates using the Vasicek and CIR models.
 
