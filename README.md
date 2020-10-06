@@ -1,4 +1,4 @@
-# COMS4995
+# Quant Paradise
 
 ![GitHub issues](https://img.shields.io/github/issues/harshhacks/COMS4995?logo=Github)
 ![GitHub](https://img.shields.io/github/license/harshhacks/COMS4995?style=flat-square)
