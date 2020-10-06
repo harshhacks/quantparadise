@@ -4,7 +4,9 @@
 ![GitHub](https://img.shields.io/github/license/harshhacks/COMS4995?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/harshhacks/COMS4995)
 
-Open Source Project for COMS 4995
+##What is it?
+
+Open Source tool to calibrate spot rates and swap rates using the Vasicek and CIR models.
 
 Link to the Repo is [here](https://github.com/harshhacks/COMS4995 "Interest Rates")
 
