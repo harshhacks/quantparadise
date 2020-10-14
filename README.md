@@ -3,6 +3,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/harshhacks/COMS4995?logo=Github)
 ![GitHub](https://img.shields.io/github/license/harshhacks/COMS4995?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/harshhacks/COMS4995)
+[![Build Status](https://travis-ci.org/harshhacks/quantparadise.svg?branch=master)](https://travis-ci.org/harshhacks/quantparadise)
 
 ## What is it?
 
