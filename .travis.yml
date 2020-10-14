@@ -8,7 +8,7 @@ install:
   - echo "no dependencies"
 
 script:
-  -pytest VR/test_auth.py/
+  - pytest VR/test_auth.py/
 
 branches:
   only:
