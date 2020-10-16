@@ -11,7 +11,7 @@ script:
   - pytest VR/test_auth.py/
 
 after_success:
-  - bash < (curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 branches:
   only:
   - master
