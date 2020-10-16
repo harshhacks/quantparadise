@@ -4,6 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/harshhacks/COMS4995?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/harshhacks/COMS4995)
 [![Build Status](https://travis-ci.org/harshhacks/quantparadise.svg?branch=master)](https://travis-ci.org/harshhacks/quantparadise)
+[![codecov](https://codecov.io/gh/harshhacks/quantparadise/branch/master/graph/badge.svg?token=M5JB8AX31Z)](undefined)
 
 ## What is it?
 
