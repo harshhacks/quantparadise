@@ -5,14 +5,16 @@ python:
 cache: pypi
 
 install:
-  - pip install flake8 
+  - pip install flake8
+  - pip install flake8 codecov pytest pytest-cov
 
 script:
   - python -m flake8 VR/
-  - pytest VR/test_auth.py/
+  - python -m pytest VR/ --cov VR/
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - codecov
 branches:
   only:
   - master
