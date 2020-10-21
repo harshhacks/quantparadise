@@ -1,1 +1,1 @@
-from VR import Mod6 as md
+from VR import Mod6 as md  # noqa:F401

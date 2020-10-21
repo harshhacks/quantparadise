@@ -5,9 +5,10 @@ python:
 cache: pypi
 
 install:
-  - echo "no dependencies"
+  - pip install flake8 
 
 script:
+  - python -m flake8 VR/
   - pytest VR/test_auth.py/
 
 after_success:
