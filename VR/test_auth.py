@@ -1,4 +1,4 @@
-from VR import Mod6 as md
+import Mod6 as md
 
 # class TestClass:
 
