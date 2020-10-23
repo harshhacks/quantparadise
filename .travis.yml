@@ -12,7 +12,8 @@ install:
 
 script:
   - python -m flake8 VR/
-  - python -m pytest VR/ --cov VR/
+  - cd VR
+  - python -m pytest test_auth.py --cov VR/
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
