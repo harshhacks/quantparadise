@@ -13,7 +13,6 @@ install:
 script:
   - python -m flake8 VR/
   - python -m pytest VR/ --cov VR/
-  - coverage run VR/test_auth.py
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
