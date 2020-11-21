@@ -8,7 +8,6 @@ Subpackages
    :maxdepth: 4
 
    PricingFIP.Vaeick_CIR
-   PricingFIP.my_tests
 
 Module contents
 ---------------

@@ -1,5 +1,5 @@
-Quant-paradise
-==============
+quantparadise
+=============
 
 .. toctree::
    :maxdepth: 4

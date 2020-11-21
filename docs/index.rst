@@ -1,10 +1,10 @@
-.. Quant Paradise documentation master file, created by
-   sphinx-quickstart on Sat Nov  7 21:24:55 2020.
+.. quantparadise documentation master file, created by
+   sphinx-quickstart on Sat Nov 21 18:32:23 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Quant Paradise's documentation!
-==========================================
+Welcome to quantparadise's documentation!
+=========================================
 
 .. toctree::
    :maxdepth: 2
