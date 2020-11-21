@@ -15,4 +15,4 @@ Looking to create a utility/tool to assist Portfolio Managers in data aquisition
 
 ## Examples
 
-![alt text](https://github.com/harshhacks/quantparadise/blob/master/1.png?raw=true)
+![alt text](https://github.com/harshhacks/quantparadise/blob/master/1.PNG?raw=true)
