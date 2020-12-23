@@ -12,7 +12,7 @@ install:
 
 
 script:
-  - flake8 --exclude=*.py
+  - flake8 --ignore=F405,F401,F811,F403,E501
   - coverage run -m pytest 
 
 after_success:

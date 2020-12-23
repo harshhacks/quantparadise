@@ -32,8 +32,7 @@ def zero_coupon(tau, r0, kappa, theta, sigma, model):
         tmp1 = kappa * tau / 2
         tmp2 = g * tau / 2
 
-        A = tmp * np.log(np.exp(tmp1) / (np.cosh(tmp2) + 
-                                         (kappa / g) * np.sinh(tmp2)))
+        A = tmp * np.log(np.exp(tmp1) / (np.cosh(tmp2) + (kappa / g) * np.sinh(tmp2)))
         # B = 2. / (kappa + g * (1. / np.tanh(g * tau / 2)))
         tanh = np.tanh(g * tau / 2)
         B = 2. * tanh / (kappa * tanh + g)
@@ -143,7 +142,7 @@ def objFunc1(params, tau, LIBOR, SWAP, model):
 
 def calibration(fun, param_0, tau, LIBOR, SWAP, model):
     '''help to change tolerance by setting appropriate parameters
-       
+
     :param fun:
     :type fun:
     :param param_0:
@@ -157,9 +156,18 @@ def calibration(fun, param_0, tau, LIBOR, SWAP, model):
     :param model:
     :type model:
     '''
-    
-    opt = {'maxiter':1000, 'maxfev':5e3}
-    sol = minimize(objFunc1, params1, args=(tau, LIBOR, SWAP, model), method='Nelder-Mead', options=opt)
+
+    opt = {'maxiter': 1000, 'maxfev': 5e3}
+    sol = minimize(
+        objFunc1,
+        params1,
+        args=(
+            tau,
+            LIBOR,
+            SWAP,
+            model),
+        method='Nelder-Mead',
+        options=opt)
     print(sol.message)
     par = np.array(sol.x)
     print('parameters = ' + str(par))
@@ -175,18 +183,18 @@ def calibration(fun, param_0, tau, LIBOR, SWAP, model):
 
 # DATA
 LIBOR = np.array([[1 / 12, 1.49078, 2.2795],
-    [2 / 12, 1.52997, 2.33075],
-    [3 / 12, 1.60042, 2.43631],
-    [6 / 12, 1.76769, 2.63525],
-    [12 / 12, 2.04263, 2.95425]])
+                  [2 / 12, 1.52997, 2.33075],
+                  [3 / 12, 1.60042, 2.43631],
+                  [6 / 12, 1.76769, 2.63525],
+                  [12 / 12, 2.04263, 2.95425]])
 
 SWAP = np.array([[2, 2.013, 3.0408],
-    [3, 2.1025, 3.1054],
-    [5, 2.195, 3.1332],
-    [7, 2.2585, 3.1562],
-    [10, 2.3457, 3.199],
-    [15, 2.4447, 3.2437],
-    [30, 2.5055, 3.227]])
+                 [3, 2.1025, 3.1054],
+                 [5, 2.195, 3.1332],
+                 [7, 2.2585, 3.1562],
+                 [10, 2.3457, 3.199],
+                 [15, 2.4447, 3.2437],
+                 [30, 2.5055, 3.227]])
 
 # PARAMETERS
 # we are going out 30 years every month (1/12)
@@ -194,10 +202,10 @@ tau = np.arange(0, 30 + 1 / 12, 1 / 12)
 
 # initial starting point
 # r0 = 0.02 kappa0 = 2 theta0 = 0.5 sigma0 = 0.1
-params = np.array([0.02, 1.0, 0.05, 0.3]);
+params = np.array([0.02, 1.0, 0.05, 0.3])
 
-params1 = np.array([0.25, 5, 0.2, 0.1]);
-params2 = np.array([0.25, 5, 0.2, 0.1]);
+params1 = np.array([0.25, 5, 0.2, 0.1])
+params2 = np.array([0.25, 5, 0.2, 0.1])
 
 # vaseick(2 dates)
 model = 'Vasicek'
@@ -205,35 +213,39 @@ model = 'Vasicek'
 print("*********************model:Vasicek************************** first date ******************************************************")
 
 whichOne = 1
-p11, L11, S11 = calibration(objFunc1, params1, tau, LIBOR[:, [0, whichOne]], SWAP[:, [0, whichOne]], model) 
+p11, L11, S11 = calibration(objFunc1, params1, tau, LIBOR[:, [
+                            0, whichOne]], SWAP[:, [0, whichOne]], model)
 
 print("*********************model:Vasicek************************** second date ******************************************************")
 # second date
 whichOne = 2
-p12, L12, S12 = calibration(objFunc1, params1, tau, LIBOR[:, [0, whichOne]], SWAP[:, [0, whichOne]], model) 
+p12, L12, S12 = calibration(objFunc1, params1, tau, LIBOR[:, [
+                            0, whichOne]], SWAP[:, [0, whichOne]], model)
 
-# CIR 
+# CIR
 model = 'CIR'
 
 # first date
 print("*********************model:CIR************************** first date ******************************************************")
 
 whichOne = 1
-p21, L21, S21 = calibration(objFunc1, params1, tau, LIBOR[:, [0, whichOne]], SWAP[:, [0, whichOne]], model) 
+p21, L21, S21 = calibration(objFunc1, params1, tau, LIBOR[:, [
+                            0, whichOne]], SWAP[:, [0, whichOne]], model)
 
 # second date
 print("*********************model:CIR************************** second date ******************************************************")
 
 whichOne = 2
-p22, L22, S22 = calibration(objFunc1, params1, tau, LIBOR[:, [0, whichOne]], SWAP[:, [0, whichOne]], model) 
+p22, L22, S22 = calibration(objFunc1, params1, tau, LIBOR[:, [
+                            0, whichOne]], SWAP[:, [0, whichOne]], model)
 
-# PLOTS 
+# PLOTS
 # VASEICK
 # vasicek first date
 
 whichOne = 1
-dataDate = 'Dec 14, 2017';
-    
+dataDate = 'Dec 14, 2017'
+
 plt.figure(figsize=(10, 12))
 
 plt.subplot(3, 1, 1)
@@ -258,8 +270,8 @@ plt.show()
 
 # vasicek second date
 whichOne = 2
-dataDate = 'Oct 11, 2018';
-    
+dataDate = 'Oct 11, 2018'
+
 plt.figure(figsize=(10, 12))
 
 plt.subplot(3, 1, 1)
@@ -294,8 +306,8 @@ plt.show()
 
 # cir first date
 whichOne = 1
-dataDate = 'Dec 14, 2017';
-    
+dataDate = 'Dec 14, 2017'
+
 plt.figure(figsize=(10, 12))
 
 plt.subplot(3, 1, 1)
@@ -320,8 +332,8 @@ plt.show()
 
 # cir second date
 whichOne = 2
-dataDate = 'Oct 11, 2018';
-    
+dataDate = 'Oct 11, 2018'
+
 plt.figure(figsize=(10, 12))
 
 plt.subplot(3, 1, 1)
