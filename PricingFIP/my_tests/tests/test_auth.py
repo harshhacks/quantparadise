@@ -57,4 +57,3 @@ def test_ninth():
 def test_tenth():
 
     assert objFunc1([-2, 2, 3, 4], 2, 3, 4, model="ac") == -1
-    
