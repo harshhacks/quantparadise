@@ -5,7 +5,7 @@ import os  # NOQA
 import sys  # NOQA
 path.append(dir(path[0])[0:dir(path[0]).rfind('\\')] + r'\Vaeick_CIR')
 path.append(
-    '/home/travis/build/Naman-Goyal/Quant-paradise/PricingFIP/' + 'Vaeick_CIR')  # NOQA
+    '/home/travis/build/harshhacks/quantparadise/PricingFIP/' + 'Vaeick_CIR')  # NOQA
 from Mod6 import *  # NOQA
 
 
